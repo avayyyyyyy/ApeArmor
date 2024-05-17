@@ -29,8 +29,6 @@ async function page({ searchParams }: PageProps) {
     return notFound();
   }
 
-  console.log(configuration);
-
   return (
     <div>
       <UploadSteps />

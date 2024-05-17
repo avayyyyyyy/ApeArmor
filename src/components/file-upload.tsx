@@ -22,15 +22,12 @@ export function FileUpload() {
     onClientUploadComplete: ([data]) => {
       try {
         const configID = data.serverData.configId;
-        console.log("---------7--------");
         startTransition(() => {
-          console.log("---------8--------");
           router.push(`/create/design?id=${configID}`);
         });
       } catch (error) {
         setProgress(0);
         setRedirecting(false);
-        console.log("---------9--------");
         setDragAccepted(false);
         toast({
           variant: "destructive",
@@ -41,7 +38,6 @@ export function FileUpload() {
     },
     onUploadProgress(p) {
       if (p == 100) {
-        console.log("---------10--------");
         setProgress(33.33);
       }
     },
@@ -53,19 +49,16 @@ export function FileUpload() {
       setDragAccepted(true);
       setProgress(11.11);
 
-      console.log("---------1--------");
 
       const fileUpload = await startUpload(acceptedFile, {
         configId: undefined,
       });
 
-      console.log("---------2--------");
       setRedirecting(true);
 
       if (!fileUpload) {
         setProgress(0);
         setRedirecting(false);
-        console.log("---------3--------");
         setDragAccepted(false);
         return toast({
           variant: "destructive",
@@ -74,12 +67,10 @@ export function FileUpload() {
         });
       }
 
-      console.log("---------4--------");
 
       setProgress(22.22);
       setIsDragOver(false);
     } catch (err) {
-      console.log("---------5--------");
       setProgress(0);
       setRedirecting(false);
       setDragAccepted(false);
@@ -93,7 +84,6 @@ export function FileUpload() {
   const onDropRejected = (rejectedFile: FileRejection[]) => {
     const [file] = rejectedFile;
     setIsDragOver(false);
-    console.log("---------6--------");
     toast({
       variant: "destructive",
       title: `${file.file.type || "This file"} is not supported!`,

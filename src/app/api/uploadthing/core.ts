@@ -13,20 +13,16 @@ export const ourFileRouter = {
     })
     .onUploadComplete(async ({ metadata, file }) => {
       try {
-        console.log("---------11--------");
         const { configId } = metadata.input;
 
         const res = await fetch(file.url);
-        console.log("---------12--------");
         const buffer = await res.arrayBuffer();
 
         const imgMetadata = await sharp(Buffer.from(buffer)).metadata();
-        console.log("---------13--------");
         const { width, height } = imgMetadata;
 
         if (!configId) {
           // Creating a new configuration
-          console.log("---------14--------");
           const configuration = await prisma.configuration.create({
             data: {
               imageUrl: file.url,
@@ -34,11 +30,9 @@ export const ourFileRouter = {
               width: width || 500,
             },
           });
-          console.log("---------15--------");
 
           return { configId: configuration.id };
         } else {
-          console.log("---------16--------");
           const updatedConfiguration = await prisma.configuration.update({
             where: {
               id: configId,
@@ -48,18 +42,15 @@ export const ourFileRouter = {
             },
           });
 
-          console.log("---------17--------");
           return { configId: updatedConfiguration.id };
         }
       } catch (error) {
-        console.log("---------18--------");
         console.error("Failed to run onUploadComplete", {
           error,
           metadata,
           file,
           configId: metadata.input.configId,
         });
-        console.log("---------19--------");
         throw error;
       }
     }),

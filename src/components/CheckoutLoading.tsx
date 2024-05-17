@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, Loader2 } from "lucide-react";
-// import { checkAuth } from "@/app/create/design/preview/actions";
+import { checkAuth } from "@/app/create/design/preview/actions";
 
 function CheckoutLoading({ text, id }: { text: string; id: string }) {
   const [loading, setLoading] = useState(false);
 
   async function handleClick() {
     setLoading(!loading);
-    // checkAuth(id);
+    checkAuth(id);
   }
 
   return (

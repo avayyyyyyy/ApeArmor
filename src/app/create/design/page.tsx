@@ -10,8 +10,6 @@ interface PageProps {
   };
 }
 async function Page({ searchParams }: PageProps) {
-  console.log(searchParams);
-
   const { id } = searchParams;
 
   if (!searchParams) {
