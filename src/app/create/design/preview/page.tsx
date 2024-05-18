@@ -1,10 +1,9 @@
 import CheckoutLoading from "@/components/CheckoutLoading";
 import Phone from "@/components/Phone";
 import UploadSteps from "@/components/UploadSteps";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import prisma from "@/db";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -14,7 +13,7 @@ interface PageProps {
   };
 }
 
-async function page({ searchParams }: PageProps) {
+async function Page({ searchParams }: PageProps) {
   const { id } = searchParams;
 
   if (!searchParams) {
@@ -36,7 +35,7 @@ async function page({ searchParams }: PageProps) {
         <div className="w-[50%] mx-auto flex flex-col items-center justify-center ">
           <Phone
             className="lg:w-[300px] w-[200px] h-full lg:mt-0 lg:rounded-[45px] rounded-[35px] shadow-2xl"
-            imgSrc={configuration.imageUrl}
+            imgSrc={configuration.croppedImageUrl}
           />
         </div>
         <div className="w-full">
@@ -89,19 +88,19 @@ async function page({ searchParams }: PageProps) {
           <div>
             <div className="flex w-full justify-between font-medium">
               <div>Base Price</div>
-              <div>$14.00</div>
-            </div>
-            <div className="flex w-full justify-between font-medium">
-              <div>{configuration.finish} Finish</div>
-              <div>{configuration.finish === "Smooth" ? "$0.00" : "$3.00"}</div>
+              <div>$21.00</div>
             </div>
             <div className="flex w-full justify-between font-medium">
               <div>{configuration.material} Material</div>
               <div>
                 {configuration.material === "Soft Polycarbonate"
-                  ? "$5.00"
+                  ? "$8.00"
                   : "$0.00"}
               </div>
+            </div>
+            <div className="flex w-full justify-between font-medium">
+              <div>{configuration.finish} Finish</div>
+              <div>{configuration.finish === "Smooth" ? "$0.00" : "$5.00"}</div>
             </div>
           </div>
           <Separator className="my-5" />
@@ -110,19 +109,19 @@ async function page({ searchParams }: PageProps) {
             <div>
               {configuration.finish === "Textured" &&
               configuration.material === "Soft Polycarbonate"
-                ? "$22.00"
+                ? "$34.00"
                 : ""}
               {configuration.finish === "Smooth" &&
               configuration.material === "Soft Polycarbonate"
-                ? "$19.00"
+                ? "$29.00"
                 : ""}
               {configuration.finish === "Smooth" &&
               configuration.material === "Silicon"
-                ? "$14.00"
+                ? "$21.00"
                 : ""}
               {configuration.finish === "Textured" &&
               configuration.material === "Silicon"
-                ? "$17.00"
+                ? "$26.00"
                 : ""}
             </div>
           </div>
@@ -133,4 +132,4 @@ async function page({ searchParams }: PageProps) {
   );
 }
 
-export default page;
+export default Page;

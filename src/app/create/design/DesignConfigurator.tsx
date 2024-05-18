@@ -106,6 +106,7 @@ function DesignConfigurator({
         height,
         width,
       } = phoneCaseRef.current!.getBoundingClientRect();
+      
       const { left: containerLeft, top: containerTop } =
         mainContainerRef.current!.getBoundingClientRect();
 
@@ -137,13 +138,7 @@ function DesignConfigurator({
       const base64Data = base64.split(",")[1];
 
       const blob = base64ToBlob(base64Data, "image/png");
-      const file = new File([blob], "filename.png", {
-        type: "image/png",
-      });
-
-      console.log("Uploading file...");
-
-      setProgress(44.44);
+      const file = new File([blob], "filename.png", { type: "image/png" });
 
       const uploaded = await startUpload([file], { configId });
 
@@ -167,7 +162,7 @@ function DesignConfigurator({
       setProgress(69.66);
       console.log(updated);
       toast({
-        title: "Configuraions saved successfully!",
+        title: "Configurations saved successfully!",
         description: "Redirecting you to the checkout page.",
       });
       router.push(`/create/design/preview?id=${configId}`);
@@ -190,12 +185,12 @@ function DesignConfigurator({
   };
 
   useEffect(() => {
-    let newPrice = 14.0;
+    let newPrice = 21.0;
     if (!freeMaterial) {
-      newPrice += 5.0;
+      newPrice += 8.0;
     }
     if (!smoothFinish) {
-      newPrice += 3.0;
+      newPrice += 5.0;
     }
     setPrice(`$${newPrice.toFixed(2)}`);
   }, [freeMaterial, smoothFinish]);
@@ -381,7 +376,7 @@ function DesignConfigurator({
                 className="flex cursor-pointer mb-4 items-center justify-between gap-4 rounded-lg border-gray-300 bg-white p-4 text-sm border-2 font-medium shadow-sm has-[:checked]:border-primary has-[:checked]:border-2 has-[:checked]:ring-0 has-[:checked]:ring-border-primary"
               >
                 <p className="text-gray-900">Soft Polycarbonate</p>
-                <p className="text-gray-600">+$5.00</p>
+                <p className="text-gray-600">+$8.00</p>
                 <input
                   type="radio"
                   name="MaterialOption"
@@ -421,7 +416,7 @@ function DesignConfigurator({
                 className="flex cursor-pointer items-center justify-between gap-4 rounded-lg border-gray-300 bg-white p-4 text-sm border-2 font-medium shadow-sm has-[:checked]:border-primary has-[:checked]:border-2 has-[:checked]:ring-0 has-[:checked]:ring-border-primary"
               >
                 <p className="text-gray-900">Textured Finish</p>
-                <p className="text-gray-600">+$3.00</p>
+                <p className="text-gray-600">+$5.00</p>
                 <input
                   type="radio"
                   name="FinishOption"
