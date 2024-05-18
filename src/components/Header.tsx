@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import logo from "@/public/monkey2.png";
+import logo from "@/public/Monkey2.png";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import {
@@ -10,7 +10,6 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Announcement from "./Announcement";
-import { ModeToggle } from "./ToggleTheme";
 
 async function Header() {
   let isAdmin = false;
