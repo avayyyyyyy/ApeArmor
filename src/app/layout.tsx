@@ -27,7 +27,7 @@ export default function RootLayout({
           <ProgressBarContext>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="light"
               enableSystem
               disableTransitionOnChange
             >
