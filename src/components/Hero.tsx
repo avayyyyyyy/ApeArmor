@@ -20,10 +20,10 @@ function Hero() {
       <div className="max-w-[80vw] h-[80vh] items-center mx-auto lg:flex">
         <div className="w-full mx-auto">
           <div className="mx-auto flex flex-col">
-            <h1 className="lg:text-8xl text-4xl text-center font-extrabold">
+            <h1 className="lg:text-6xl text-4xl text-center font-extrabold">
               Your Image on a
             </h1>
-            <h1 className="lg:text-7xl lg:ml-7 items-center justify-center  flex text-3xl my-3 text-center font-extrabold">
+            <h1 className="lg:text-5xl lg:ml-7 items-center justify-center  flex text-3xl my-3 text-center font-extrabold">
               <span className="bg-primary p-1 mr-1 rotate-[-3deg]  text-primary-foreground">
                 Custom
               </span>
