@@ -37,7 +37,7 @@ async function page({ searchParams }: PageProps) {
 
   return (
     <>
-      <div className="w-[60vw] mx-auto">
+      <div className="lg:max-w-[60vw] max-w-[80vw]   mx-auto">
         <div className="mt-10">
           <div className="text-primary lg:text-lg text-sm font-bold">
             Thank you! 🧡
@@ -77,25 +77,25 @@ async function page({ searchParams }: PageProps) {
             color={configuration?.color!}
           />
         </div>
-      </div>
-      <div className="flex mt-10 mx-6 lg:mx-0 flex-col items-center gap-4 rounded-lg bg-primary p-6 shadow-lg sm:flex-row sm:justify-between">
-        <strong className="text-xl text-primary-foreground sm:text-xl">
-          {" "}
-          Liked this project?
-        </strong>
-
-        <Link
-          className="inline-flex items-center gap-2 rounded-full border border-prim bg-prim px-8 py-3 text-primbg-primary hover:bg-transparent hover:text-prim focus:outline-none focus:ring active:bg-prim/90"
-          href="https://github.com/avayyyyyyy/ApeArmor"
-          target="_blank"
-        >
-          <span className="text-sm text-primary-foreground  font-medium">
+        <div className="flex mt-10  lg:mx-0 flex-col items-center gap-4 rounded-lg bg-primary p-6 shadow-lg sm:flex-row sm:justify-between">
+          <strong className="text-xl text-primary-foreground sm:text-xl">
             {" "}
-            Give it a 🌟 !
-          </span>
+            Liked this project?
+          </strong>
 
-          <Github className="text-primary-foreground" size={18} />
-        </Link>
+          <Link
+            className="inline-flex items-center gap-2 rounded-full border border-prim bg-prim px-8 py-3 text-primbg-primary hover:bg-transparent hover:text-prim focus:outline-none focus:ring active:bg-prim/90"
+            href="https://github.com/avayyyyyyy/ApeArmor"
+            target="_blank"
+          >
+            <span className="text-sm text-primary-foreground  font-medium">
+              {" "}
+              Give it a 🌟 !
+            </span>
+
+            <Github className="text-primary-foreground" size={18} />
+          </Link>
+        </div>
       </div>
     </>
   );
