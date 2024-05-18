@@ -49,7 +49,6 @@ export function FileUpload() {
       setDragAccepted(true);
       setProgress(11.11);
 
-
       const fileUpload = await startUpload(acceptedFile, {
         configId: undefined,
       });
@@ -66,7 +65,6 @@ export function FileUpload() {
           description: "Please try again.. ",
         });
       }
-
 
       setProgress(22.22);
       setIsDragOver(false);
@@ -120,10 +118,7 @@ export function FileUpload() {
               {({ getRootProps, getInputProps }) => (
                 <div>
                   <div className="flex justify-center" {...getRootProps()}>
-                    <label
-                      className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-white p-6 text-gray-500 transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-400 dark:hover:border-gray-500 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                      htmlFor="file-upload"
-                    >
+                    <div className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-white p-6 text-gray-500 transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-400 dark:hover:border-gray-500 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900">
                       <div className="text-center">
                         <UploadIcon
                           className="mx-auto h-8 w-8"
@@ -142,7 +137,7 @@ export function FileUpload() {
                         multiple
                         type="file"
                       />
-                    </label>
+                    </div>
                   </div>
                 </div>
               )}

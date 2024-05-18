@@ -19,16 +19,16 @@ function Hero() {
     <div className="lg:bg-foreground/5 lg:rounded-lg lg:shadow-2xl lg:mt-14 mt-10  lg:border border-primary">
       <div className="max-w-[80vw] h-[80vh] items-center mx-auto lg:flex">
         <div className="w-full mx-auto">
-          <div className="mx-auto flex flex-col">
-            <h1 className="lg:text-7xl text-4xl text-center font-extrabold">
-              Your Image on a
+          <div className="mx-auto flex flex-col lg:ml-24">
+            <h1 className="lg:text-[3.7rem] text-4xl lg:justify-start lg:text-start  text-center font-extrabold">
+              Your Image on your
             </h1>
-            <h1 className="lg:text-6xl lg:ml-7 items-center justify-center  flex text-3xl my-3 text-center font-extrabold">
-              <span className="bg-primary p-1 mr-1 rotate-[-3deg]  text-primary-foreground">
+            <h1 className="lg:text-[3rem]  lg:justify-start items-center justify-center  flex text-3xl my-3 text-center font-extrabold">
+              <span className="bg-primary p-1 mr-1 rotate-[-3deg] text-primary-foreground">
                 Custom
               </span>
               {""}
-              Phone Case
+              <span className="text-[2.5rem]">Phone Case</span>
               <span className="hidden lg:block">
                 <Image
                   className="w-12 shrink-0 lg:w-20"
@@ -38,7 +38,7 @@ function Hero() {
               </span>
             </h1>
           </div>
-          <p className="w-[80%] lg:w-[80%] lg:text-start  lg:mx-24 m-auto mt-8 text-foreground font-medium  text-center">
+          <p className="w-[80%] lg:w-[80%] lg:text-start  lg:mx-24 m-auto mb-6 text-foreground font-medium  text-center">
             Capture your favorite memories with your own,{" "}
             <span className="font-extrabold text-secondary-foreground">
               one-of-one
@@ -72,7 +72,7 @@ function Hero() {
               Modern iPhone models supported.
             </li>
           </ul>
-          <div className="mt-10 w-fit mx-auto lg:text-start  lg:mx-24  flex flex-col sm:flex-row items-center sm:items-start gap-5">
+          <div className="mt-10 w-fit mx-auto lg:text-start lg:mx-24 flex flex-col sm:flex-row items-center sm:items-start gap-5">
             <div className="flex">
               <Image
                 className="inline-block object-cover h-12 w-12 rounded-full ring-2 ring-primary "
