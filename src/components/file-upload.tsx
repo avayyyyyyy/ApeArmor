@@ -118,7 +118,10 @@ export function FileUpload() {
               {({ getRootProps, getInputProps }) => (
                 <div>
                   <div className="flex justify-center" {...getRootProps()}>
-                    <div className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-white p-6 text-gray-500 transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-400 dark:hover:border-gray-500 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900">
+                    <label
+                      htmlFor="file-upload"
+                      className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-white p-6 text-gray-500 transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-400 dark:hover:border-gray-500 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                    >
                       <div className="text-center">
                         <UploadIcon
                           className="mx-auto h-8 w-8"
@@ -137,7 +140,7 @@ export function FileUpload() {
                         multiple
                         type="file"
                       />
-                    </div>
+                    </label>
                   </div>
                 </div>
               )}
