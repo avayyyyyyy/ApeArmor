@@ -1,4 +1,4 @@
-import { Check, Star } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import user1 from "@/public/Users/User1.jpg";
@@ -11,12 +11,14 @@ import MainMonkey from "@/public/MainMonkey.jpg";
 import monkey from "@/public/Monkey5.png";
 import UserCount from "./UserCount";
 import YourImageIcon from "@/public/assets/your-image.png";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 function Hero() {
   return (
     <div className="lg:bg-foreground/5 lg:rounded-lg lg:shadow-2xl lg:mt-14 mt-10  lg:border border-primary">
       <div className="max-w-[80vw] h-[80vh] items-center mx-auto lg:flex">
-        <div className="">
+        <div className="w-full mx-auto">
           <div className="mx-auto flex flex-col">
             <h1 className="lg:text-8xl text-4xl text-center font-extrabold">
               Your Image on a
@@ -48,7 +50,7 @@ function Hero() {
             </span>{" "}
             allows you to protect your memories, not just your phone case.
           </p>
-          <ul className="w-fit lg:text-start  lg:mx-24 font-bold text-muted-foreground  mx-auto mt-10">
+          <ul className="w-fit lg:text-start  lg:mx-24 font-bold text-muted-foreground  mx-auto">
             <li className="flex items-center gap-2 ">
               <span>
                 <Check size={18} className="text-primary" />
@@ -112,6 +114,16 @@ function Hero() {
             </span>{" "}
             Happy customers.
           </p>
+          <div className="w-full flex justify-center">
+            <Button asChild className="lg:hidden my-4">
+              <Link href={"/create"}>
+                Create your case now
+                <span>
+                  <ArrowRight className="ml-1" size={18} />
+                </span>
+              </Link>
+            </Button>
+          </div>
         </div>
         <div className="w-fit h-fit lg:flex mt-[-30px] lg:mt-0 lg:pr-20  mx-auto">
           <Phone
