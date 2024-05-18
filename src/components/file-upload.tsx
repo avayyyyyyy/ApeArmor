@@ -9,13 +9,10 @@ import { useToast } from "./ui/use-toast";
 
 export function FileUpload() {
   const { toast } = useToast();
-
   const [redirecting, setRedirecting] = useState(false);
-  const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const [dragAccepted, setDragAccepted] = useState<boolean>(false);
-
+  const [isDragOver, setIsDragOver] = useState(false);
+  const [dragAccepted, setDragAccepted] = useState(false);
   const [progress, setProgress] = useContext(ProgressContext);
-
   const router = useRouter();
 
   const { isUploading, startUpload } = useUploadThing("imageUploader", {
@@ -32,12 +29,12 @@ export function FileUpload() {
         toast({
           variant: "destructive",
           title: `File not uploaded`,
-          description: "Please try again.. ",
+          description: "Please try again.",
         });
       }
     },
     onUploadProgress(p) {
-      if (p == 100) {
+      if (p === 100) {
         setProgress(33.33);
       }
     },
@@ -45,14 +42,11 @@ export function FileUpload() {
 
   const onDropAccepted = async (acceptedFile: File[]) => {
     try {
-      console.log("Accepted");
       setDragAccepted(true);
       setProgress(11.11);
-
       const fileUpload = await startUpload(acceptedFile, {
         configId: undefined,
       });
-
       setRedirecting(true);
 
       if (!fileUpload) {
@@ -62,7 +56,7 @@ export function FileUpload() {
         return toast({
           variant: "destructive",
           title: `File not uploaded`,
-          description: "Please try again.. ",
+          description: "Please try again.",
         });
       }
 
@@ -75,17 +69,18 @@ export function FileUpload() {
       toast({
         variant: "destructive",
         title: `File not uploaded`,
-        description: "Please try again.. ",
+        description: "Please try again.",
       });
     }
   };
+
   const onDropRejected = (rejectedFile: FileRejection[]) => {
     const [file] = rejectedFile;
     setIsDragOver(false);
     toast({
       variant: "destructive",
       title: `${file.file.type || "This file"} is not supported!`,
-      description: "Please choose a JPG,JPEG,or a PNG file. ",
+      description: "Please choose a JPG, JPEG, or PNG file.",
     });
   };
 
@@ -100,7 +95,7 @@ export function FileUpload() {
               <h1 className="text-3xl font-bold tracking-tight text-foreground dark:text-gray-50">
                 Upload Your Images
               </h1>
-              <p className="mt-2 text-base  text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-base text-gray-500 dark:text-gray-400">
                 Drag and drop your images or click to select.
               </p>
             </div>
@@ -123,9 +118,14 @@ export function FileUpload() {
                       className="flex h-32 w-full cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-white p-6 text-gray-500 transition-colors hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-950 dark:text-gray-400 dark:hover:border-gray-500 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                     >
                       <div className="text-center">
-                        <UploadIcon
-                          className="mx-auto h-8 w-8"
+                        <UploadIcon className="mx-auto h-8 w-8" />
+                        <input
                           {...getInputProps()}
+                          accept="image/*"
+                          className="sr-only"
+                          id="file-upload"
+                          multiple
+                          type="file"
                         />
                         <span className="mt-2 block text-base font-medium">
                           {isDragOver
@@ -133,13 +133,6 @@ export function FileUpload() {
                             : "Drop images to upload."}
                         </span>
                       </div>
-                      <input
-                        accept="image/*"
-                        className="sr-only"
-                        id="file-upload"
-                        multiple
-                        type="file"
-                      />
                     </label>
                   </div>
                 </div>
@@ -179,13 +172,12 @@ function Loading({ redirecting }: { redirecting: boolean }) {
       <div className="w-[80vw] border border-primary max-w-md space-y-6 rounded-lg bg-primary-foreground p-6 shadow-lg dark:bg-gray-950">
         <div className="text-center">
           <h1 className="text-3xl flex items-center justify-center font-bold tracking-tight text-foreground dark:text-gray-50">
-            Loading...{" "}
+            Loading...
             <span>
               <Loader size={30} className="animate-spin text-foreground" />
             </span>
           </h1>
-
-          <p className="mt-2 text-base  text-gray-500 dark:text-gray-400">
+          <p className="mt-2 text-base text-gray-500 dark:text-gray-400">
             {redirecting
               ? "Redirecting, Please wait."
               : "Uploading your image, Please wait."}
