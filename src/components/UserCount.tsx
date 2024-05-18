@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 const UserCount = () => {
   return (
     <>
-      <CountUp end={1100} duration={10} start={0} />+
+      <CountUp end={1100} duration={3} start={0} />+
     </>
   );
 };
