@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 
 function Testimonial() {
   return (
-    <div className="lg:bg-foreground/5 h-fit lg:py-20 lg:my-20 mt-[500px] mx-auto  lg:rounded-lg lg:shadow-2xl lg:mt-14 max-w-[80vw] lg:border border-primary">
+    <div className="lg:bg-foreground/5 h-fit lg:py-20 lg:my-20 mt-[600px] mx-auto  lg:rounded-lg lg:shadow-2xl lg:mt-14 max-w-[80vw] lg:border border-primary">
       <div className="mx-auto w-full flex items-center justify-center">
         <h1 className="lg:text-5xl lg:flex block  items-center text-3xl text-center font-extrabold">
           <p className=" shrink-0 lg:text-5xl text-4xl ">What our</p>

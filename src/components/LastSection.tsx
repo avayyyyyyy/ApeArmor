@@ -10,12 +10,12 @@ const LastSection = () => {
   return (
     <div>
       <div className="text-center max-w-[80vw] mx-auto">
-        <h2 className="text-3xl max-w-2xl mx-auto  font-extrabold text-foreground sm:text-5xl">
+        <h2 className="text-3xl max-w-2xl pb-2 mx-auto font-extrabold text-foreground sm:text-5xl">
           Upload your photo and get{" "}
-          <span className="bg-primary px-1 text-primary-foreground">
+          <span className=" px-1 mt-2 ">
             your own case
           </span>{" "}
-          now
+          now!
         </h2>
 
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
@@ -91,7 +91,6 @@ const LastSection = () => {
           {" "}
           Meet the developer here!{" "}
         </strong>
-
         <Link
           className="inline-flex items-center gap-2 rounded-full border border-prim bg-prim px-8 py-3 text-primbg-primary hover:bg-transparent hover:text-prim focus:outline-none focus:ring active:bg-prim/90"
           href="https://github.com/avayyyyyyy"
