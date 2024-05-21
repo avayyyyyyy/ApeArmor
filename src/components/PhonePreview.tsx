@@ -60,7 +60,7 @@ const PhonePreview = ({
         />
       </div>
 
-      <div className="relative h-full w-full z-40">
+      <div className="relative h-full w-full z-10">
         <Image
           fill
           alt="phone"
