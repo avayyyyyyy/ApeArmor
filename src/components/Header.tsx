@@ -24,7 +24,7 @@ async function Header() {
     <>
       <Announcement />
 
-      <div className="flex sticky top-0 bg-primary-foreground dark:bg-black lg:z-20 z-[100]   w-screen items-center justify-between px-7 mb-5  py-4 border-b border-primary shadow-md ">
+      <div className="flex sticky top-0 bg-primary-foreground dark:bg-black lg:z-20 z-[10000000000]   w-screen items-center justify-between px-7 mb-5  py-4 border-b border-primary shadow-md ">
         <div>
           <Link className="font-bold flex items-center  text-xl" href={"/"}>
             <span>
